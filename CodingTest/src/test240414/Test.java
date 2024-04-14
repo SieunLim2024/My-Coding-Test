@@ -3,15 +3,16 @@ package test240414;
 import java.util.Arrays;
 import java.util.Stack;
 
-public class test {
+public class Test {
 	boolean solution(String s) {
-	    Stack<String> stack = new Stack<>();
-	        for(int i=0;i<s.length();i++){
-	            if(s.charAt(i)=='('){
-	                stack.push(s.charAt(i)+"");
+		char[] ch = s.toCharArray();
+	    Stack<Character> stack = new Stack<>();
+	        for(int i=0;i<ch.length;i++){
+	            if(ch[i]=='('){
+	                stack.push(ch[i]);
 	            }else if(stack.size()!=0){
 	                stack.pop();
-	            }else if(stack.size()==0&&s.charAt(i)==')'){
+	            }else if(stack.size()==0&&ch[i]==')'){
 	                return false;
 	            }
 
