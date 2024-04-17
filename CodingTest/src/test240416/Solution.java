@@ -1,21 +1,21 @@
 package test240416;
 
 class Solution {
-    public String solution(String s) {
-	    s = s.toLowerCase();
-		char[] ch = s.toCharArray();
-		StringBuffer st = new StringBuffer();
-		if (ch[0] >= 97 && ch[0] <= 122) {
-			ch[0] -= 32;
-		}
-		for (int i = 0; i < s.length(); i++) {
-			if (ch[i] == ' ') {
-				if (i<s.length()-1&&ch[i + 1] >= 97 && ch[i + 1] <= 122) {
-					ch[i + 1] -= 32;
-				}
-			}
-			st.append(ch[i]);
-		}
-		return st.toString();
-	}
+    public int[] solution(String s) {
+        int remove=0;
+        int count=0; 
+        boolean flag= false;
+
+        while(!flag){
+            String s2=s.replace("0","");
+            remove+=s.length()-s2.length();
+            count++;
+            s=Integer.toString(s2.length(),2);
+            if(s.equals("1")){
+                flag=true;
+            }
+        }
+        int [] answer ={count,remove};
+        return answer;
+    }
 }

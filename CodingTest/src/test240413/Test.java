@@ -1,20 +1,27 @@
 package test240413;
 
-public class Test {
-	public static String solution(String s) {
-		String[] a = s.split(" ");
-		int max = Integer.parseInt(a[0]);
-		int min = Integer.parseInt(a[0]);
+import java.util.Arrays;
+import java.util.Stack;
 
-		for (int i = 0; i < a.length; i++) {
-			if (max < Integer.parseInt(a[i])) {
-				max = Integer.parseInt(a[i]);
-			}
-			if (min > Integer.parseInt(a[i])) {
-				min = Integer.parseInt(a[i]);
-			}
-		}
-		String answer = min + " " + max;
-		return answer;
-	}
+public class Test {
+	boolean solution(String s) {
+		char[] ch = s.toCharArray();
+	    Stack<Character> stack = new Stack<>();
+	        for(int i=0;i<ch.length;i++){
+	            if(ch[i]=='('){
+	                stack.push(ch[i]);
+	            }else if(stack.size()!=0){
+	                stack.pop();
+	            }else if(stack.size()==0&&ch[i]==')'){
+	                return false;
+	            }
+
+	        }
+	        if(stack.size()==0){
+	            return true;
+	        }else{
+	            return false;
+	        }
+        }
+
 }

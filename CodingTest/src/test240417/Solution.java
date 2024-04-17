@@ -1,21 +1,29 @@
 package test240417;
 
 class Solution {
-    public int[] solution(String s) {
-        int remove=0;
-        int count=0; 
-        boolean flag= false;
-
-        while(!flag){
-            String s2=s.replace("0","");
-            remove+=s.length()-s2.length();
-            count++;
-            s=Integer.toString(s2.length(),2);
-            if(s.equals("1")){
-                flag=true;
+    public int solution(int n) {
+        String n1 = Integer.toString(n,2);
+        int num1=0;
+        for(int i=0;i<n1.length();i++){
+            if(n1.charAt(i)=='1'){
+                num1++;
             }
         }
-        int [] answer ={count,remove};
+        int answer=0;
+        
+        for(int i=n+1;;i++){
+            String n2=Integer.toString(i,2);
+            int num2=0;
+            for(int j=0;j<n2.length();j++){
+                if(n2.charAt(j)=='1'){
+                    num2++;
+                }
+            }
+            if(num2==num1){
+                answer=i;
+                break;
+            }
+        }
         return answer;
     }
 }
