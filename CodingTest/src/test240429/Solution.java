@@ -7,7 +7,7 @@ class Solution {
 		int count = 0;
 		int answer = 0;
 		Arrays.sort(tangerine);
-		ArrayList<Integer> list = new ArrayList();
+		ArrayList<Integer> list = new ArrayList<Integer>();
 
 		for (int i = 0; i < tangerine.length; i++) {
 			count++;
