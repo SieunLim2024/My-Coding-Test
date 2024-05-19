@@ -20,7 +20,7 @@ class Solution {
         for(int i=0;i<cities.length;i++){
         	boolean flag=false;
             for(int j=0; j<list.size();j++){
-                if(list.get(j).equals(cities[i])){
+                if(list.get(j).toUpperCase().equals(cities[i].toUpperCase())){
                     answer+=1;
                     list.remove(j);
                     list.add(cities[i]);
@@ -30,10 +30,13 @@ class Solution {
             }
             if(flag==false) {
             	answer+=5;
-            	if(list.size()>cacheSize) {
+            	if(list.size()>=cacheSize&&list.size()>0) {
             		list.remove(0);
             	}
-                list.add(cities[i]);
+                if(cacheSize>0){
+                    list.add(cities[i]);
+                }
+                
             }
         }
         return answer;
