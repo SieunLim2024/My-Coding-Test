@@ -1,4 +1,4 @@
-package test240706;
+package backjoon;
 //10814 나이순 정렬
 
 //문제
@@ -13,7 +13,7 @@ package test240706;
 
 import java.util.*;
 
-public class Main {
+public class backjoon10814 {
 
 	public static void main(String args[]) {
 		Scanner sc = new Scanner(System.in);

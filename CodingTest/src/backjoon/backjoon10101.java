@@ -1,5 +1,5 @@
-package test240704;
-//삼각형 외우기
+package backjoon;
+//10101 삼각형 외우기
 //창영이는 삼각형의 종류를 잘 구분하지 못한다. 따라서 프로그램을 이용해 이를 외우려고 한다.
 
 //삼각형의 세 각을 입력받은 다음, 
@@ -18,7 +18,7 @@ package test240704;
 
 import java.util.Scanner;
 
-public class Main{
+public class backjoon10101{
     public static void main(String[] args){
     	System.out.println("삼각형의 각 크기를 입력하시오.");
         Scanner sc = new Scanner(System.in);
