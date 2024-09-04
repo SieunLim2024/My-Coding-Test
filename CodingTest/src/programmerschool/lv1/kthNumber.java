@@ -22,11 +22,56 @@ public class kthNumber {
 
 			int[] temp = Arrays.copyOfRange(array, i, j);
 			Arrays.sort(temp);
+			//선택정렬
+//			selectionSort(temp);
+			//삽입정렬
+//		    insertionSort(temp);
+			//버블정렬
+//			bubbleSort(temp);
 			answer[n] = temp[k];
 
 		}
 		return answer;
 	}
+	//선택 정렬
+	private void selectionSort(int[] arr) {
+		for(int i=0;i<arr.length-1; i++) {
+			int minIndex=i;
+			for(int j=i+1;j<arr.length;j++) {
+				if(arr[j]<arr[minIndex]) {
+					minIndex=j;
+				}
+			}
+			int temp=arr[minIndex];
+			arr[minIndex]=arr[i];
+			arr[i]=temp;
+		}
+	}
+	//삽입 정렬
+	 private void insertionSort(int[] arr) {
+	        for (int i = 1; i < arr.length; i++) {
+	            int key = arr[i];
+	            int j = i - 1;
+	            while (j >= 0 && arr[j] > key) {
+	                arr[j + 1] = arr[j];
+	                j = j - 1;
+	            }
+	            arr[j + 1] = key;
+	        }
+	    }
+	 //버블 정렬
+	 private void bubbleSort(int[] arr) {
+	        for (int i = 0; i < arr.length - 1; i++) {
+	            for (int j = 0; j < arr.length - 1 - i; j++) {
+	                if (arr[j] > arr[j + 1]) {
+	                    int temp = arr[j];
+	                    arr[j] = arr[j + 1];
+	                    arr[j + 1] = temp;
+	                }
+	            }
+	        }
+	    }
+
 
 	public static void main(String args[]) {
 		kthNumber kn = new kthNumber();
