@@ -1,0 +1,31 @@
+package backjoon;
+//4447 좋은놈 나쁜놈
+//https://www.acmicpc.net/problem/4447
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Backjoon4447 {
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		int n = Integer.parseInt(br.readLine());
+		
+		while (n-- > 0) {
+			String name = br.readLine();
+			int g = 0, b = 0;
+			for (int i = 0; i < name.length(); i++) {
+				switch(name.charAt(i)) {
+				case 'g': case 'G':
+					g++;
+					break;
+				case 'b': case 'B':
+					b++;
+					break;
+				}
+			}
+			
+			String print = g == b ? "NEUTRAL" : g < b ? "A BADDY" : "GOOD";
+			System.out.println(name + " is " + print);
+		}
+	}
+}
